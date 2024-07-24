@@ -6,10 +6,10 @@ class Home extends Component {
       <div className="align-center">
         <h2 className="text-center">ADMIN HOME</h2>
         <img
-          src="http://cliparting.com/wp-content/uploads/2018/03/animated-emoticons-2018-13.gif"
+          src="https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExYzlwemtqaWsyamU4Z3I2bGlnNmRwNnAwdm9sMHBlYXRtaGdlaDR6diZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/HzPtbOKyBoBFsK4hyc/giphy.webp"
           width="800px"
           height="600px"
-          alt=""
+          alt="Admin Home"
         />
       </div>
     );

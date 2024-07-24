@@ -1,0 +1,40 @@
+.border-bottom {
+    border-bottom: 1px solid #ccc;
+    padding: 10px 0;
+    overflow: hidden; /* Đảm bảo rằng phần tử bao quanh có thể chứa các phần tử float */
+  }
+  
+  .float-left {
+    float: left;
+  }
+  
+  .float-right {
+    float: right;
+  }
+  
+  .float-clear {
+    clear: both;
+  }
+  
+  .float-left div, .float-right {
+    margin: 0 10px;
+  }
+  
+  .float-left a, .float-right a {
+    text-decoration: none;
+    color: #007bff;
+    margin: 0 5px;
+  }
+  
+  .float-left a:hover, .float-right a:hover {
+    text-decoration: underline;
+  }
+  
+  .float-left b, .float-right b {
+    font-weight: bold;
+  }
+  
+  .float-right b {
+    color: #ff0000;
+  }
+  

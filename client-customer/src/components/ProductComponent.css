@@ -1,0 +1,80 @@
+/* ProductComponent.css */
+
+/* Container styles */
+.products-container {
+  padding: 40px 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.products-container h2 {
+  font-size: 2.5em;
+  margin-bottom: 30px;
+  color: #333;
+}
+
+.text-center {
+  text-align: center;
+}
+
+/* Sorting dropdown */
+.products-container select {
+  padding: 10px;
+  font-size: 1.2em;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  outline: none;
+  margin-bottom: 20px;
+}
+
+/* Products grid */
+.products-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.product {
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  overflow: hidden;
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  max-width: 250px;
+}
+
+.product:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.product figure {
+  margin: 0;
+  padding: 0;
+}
+
+.product img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-bottom: 1px solid #ddd;
+}
+
+figcaption {
+  padding: 15px;
+  background-color: #fff;
+  font-size: 1.1em;
+  color: #555;
+  text-align: center;
+}
+
+/* Footer styles */
+footer {
+  background-color: #f1f1f1;
+  padding: 20px;
+  text-align: center;
+  font-size: 0.9em;
+  color: #333;
+  border-top: 1px solid #ddd;
+  margin-top: 40px;
+}

@@ -19,7 +19,7 @@ const ProductDAO = {
     return result;
   },
   async update(product) {
-    const newvalues = { name: product.name, price: product.price, image: product.image, category: product.category };
+    const newvalues = { name: product.name, price: product.price, image: product.image, imageDetails: product.imageDetails, category: product.category };
     const result = await Models.Product.findByIdAndUpdate(product._id, newvalues, { new: true });
     return result;
   },
@@ -45,13 +45,16 @@ const ProductDAO = {
       { $sort: { sum: -1 } }, // descending
       { $limit: top }
     ]).exec();
+  
     var products = [];
     for (const item of items) {
       const product = await ProductDAO.selectByID(item._id);
-      products.push(product);
+      if (product) {
+        products.push(product);
+      }
     }
     return products;
-  },
+  },//////////////////////////
   async selectByCatID(_cid) {
     const query = { 'category._id': _cid };
     const products = await Models.Product.find(query).exec();
@@ -61,6 +64,11 @@ const ProductDAO = {
     const query = { name: { $regex: new RegExp(keyword, "i") } };
     const products = await Models.Product.find(query).exec();
     return products;
+  },
+  async selectByCount() {
+    const query = {};
+    const noProducts = await Models.Product.find(query).count().exec();
+    return noProducts;
   }
 };
 module.exports = ProductDAO;

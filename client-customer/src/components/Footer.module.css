@@ -1,0 +1,67 @@
+/* Footer.module.css */
+
+.footer {
+    width: 100%; /* Chiều rộng của footer */
+    margin: 0; /* Đảm bảo không có khoảng trắng xung quanh */
+    padding: 0; /* Đảm bảo không có khoảng trắng xung quanh */
+  }
+  
+  .fullWidthBackground {
+    background-color: #3c5233; /* Màu nền của footer */
+    color: white; /* Màu chữ */
+    padding: 20px 0; /* Padding trên và dưới */
+    width: 100vw; /* Chiều rộng của phần tử bao quanh */
+    margin-left: calc(-50vw + 50%); /* Đảm bảo phần tử trải dài hết viewport */
+  }
+  
+  .container {
+    max-width: 1200px; /* Chiều rộng tối đa của nội dung */
+    margin: 0 auto; /* Canh giữa container */
+    padding: 0 20px; /* Padding hai bên cho container */
+    display: flex;
+    justify-content: space-between; /* Phân bố không gian đều giữa các phần tử */
+    flex-wrap: wrap; /* Cho phép các phần tử gói lại trên nhiều dòng nếu cần */
+  }
+  
+  .section {
+    flex: 1; /* Đảm bảo các phần tử chiếm đều không gian */
+    min-width: 200px; /* Chiều rộng tối thiểu cho mỗi phần tử */
+    margin: 10px; /* Khoảng cách giữa các phần tử */
+  }
+  
+  .section h2, .section h3 {
+    margin-top: 0; /* Xóa margin trên của tiêu đề */
+    color: #fff; /* Màu chữ của tiêu đề */
+  }
+  
+  .section p, .section ul, .section li {
+    margin: 5px 0; /* Khoảng cách giữa các đoạn văn và danh sách */
+    color: #fff; /* Màu chữ của đoạn văn và danh sách */
+  }
+  
+  .section ul {
+    list-style: none; /* Xóa kiểu danh sách */
+    padding: 0; /* Xóa padding */
+  }
+  
+  .section li a {
+    text-decoration: none; /* Xóa gạch chân của liên kết */
+    color: #fff; /* Màu chữ của liên kết */
+  }
+  
+  .section li a:hover {
+    text-decoration: underline; /* Hiệu ứng khi hover vào liên kết */
+  }
+  
+  .fanpage iframe {
+    border: none; /* Xóa viền của iframe */
+  }
+  
+  .bottomBar {
+    background-color: #3c5233; /* Màu nền của thanh dưới */
+    color: #e3b7b7; /* Màu chữ của thanh dưới */
+    text-align: center; /* Canh giữa nội dung của thanh dưới */
+    padding: 0px; /* Padding trên và dưới của thanh dưới */
+    margin-top: 10px; /* Khoảng cách phía trên thanh dưới */
+  }
+  

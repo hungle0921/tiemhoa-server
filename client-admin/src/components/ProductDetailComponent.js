@@ -13,6 +13,7 @@ class ProductDetail extends Component {
       txtPrice: 0,
       cmbCategory: '',
       imgProduct: '',
+      imgDetails: []
     };
   }
   render() {
@@ -46,6 +47,10 @@ class ProductDetail extends Component {
                 <td><input type="file" name="fileImage" accept="image/jpeg, image/png, image/gif" onChange={(e) => this.previewImage(e)} /></td>
               </tr>
               <tr>
+                <td>Image details</td>
+                <td><input type="file" name="fileImage" accept="image/jpeg, image/png, image/gif" onChange={(e) => this.previewImageDetails(e)} multiple /></td>
+              </tr>
+              <tr>
                 <td>Category</td>
                 <td><select onChange={(e) => { this.setState({ cmbCategory: e.target.value }) }}><option value='select'>--select--</option>{cates}</select></td>
               </tr>
@@ -59,6 +64,13 @@ class ProductDetail extends Component {
               </tr>
               <tr>
                 <td colSpan="2"><img src={this.state.imgProduct} width="300px" height="300px" alt="" /></td>
+              </tr>
+              <tr>
+                <td colSpan="2">
+                  {this.state.imgDetails.map((image, index) => (
+                    <img key={index} src={image} width="100px" height="100px" alt="" />
+                  ))}
+                </td>
               </tr>
             </tbody>
           </table>
@@ -101,11 +113,12 @@ class ProductDetail extends Component {
     const price = parseInt(this.state.txtPrice);
     const category = this.state.cmbCategory;
     const image = this.state.imgProduct.replace(/^data:image\/[a-z]+;base64,/, ''); // remove "data:image/...;base64,"
-    if (id && name && price && category && category !== 'select' && image) {
-      const prod = { name: name, price: price, category: category, image: image };
+    const imageDetails = this.state.imgDetails.map((img) => img.replace(/^data:image\/[a-z]+;base64,/, ''));
+    if (id && name && price && category && category !== 'select' && image && imageDetails.length > 0) {
+      const prod = { name: name, price: price, category: category, image: image, imageDetails: imageDetails };
       this.apiPutProduct(id, prod);
     } else {
-      alert('Please input id and name and price and category and image');
+      alert('Please input id and name and price and category and image and image details');
     }
   }
   // apis
@@ -129,11 +142,12 @@ class ProductDetail extends Component {
     const price = parseInt(this.state.txtPrice);
     const category = this.state.cmbCategory;
     const image = this.state.imgProduct.replace(/^data:image\/[a-z]+;base64,/, ''); // remove "data:image/...;base64,"
-    if (name && price && category && category !== 'select' && image) {
-      const prod = { name: name, price: price, category: category, image: image };
+    const imageDetails = this.state.imgDetails.map((img) => img.replace(/^data:image\/[a-z]+;base64,/, ''));
+    if (name && price && category && category !== 'select' && image && imageDetails.length > 0) {
+      const prod = { name: name, price: price, category: category, image: image, imageDetails: imageDetails };
       this.apiPostProduct(prod);
     } else {
-      alert('Please input name and price and category and image');
+      alert('Please input name and price and category and image and image details');
     }
   }
   // apis
@@ -175,7 +189,8 @@ class ProductDetail extends Component {
         txtName: this.props.item.name,
         txtPrice: this.props.item.price,
         cmbCategory: this.props.item.category._id,
-        imgProduct: 'data:image/jpg;base64,' + this.props.item.image
+        imgProduct: 'data:image/jpg;base64,' + this.props.item.image,
+        imgDetails: this.props.item.imageDetails.map((image) => 'data:image/jpg;base64,' + image)
       });
     }
   }
@@ -188,6 +203,25 @@ class ProductDetail extends Component {
         this.setState({ imgProduct: evt.target.result });
       };
       reader.readAsDataURL(file);
+    }
+  }
+  previewImageDetails(e) {
+    const files = e.target.files;
+    if (files.length > 0) {
+      const newImages = [];
+      const promises = Array.from(files).map((file) => {
+        return new Promise((resolve) => {
+          const reader = new FileReader();
+          reader.onload = (evt) => {
+            newImages.push(evt.target.result);
+            resolve();
+          };
+          reader.readAsDataURL(file);
+        });
+      });
+      Promise.all(promises).then(() => {
+        this.setState({ imgDetails: newImages });
+      });
     }
   }
   // apis

@@ -19,13 +19,15 @@ router.get('/categories', async function (req, res) {
 });
 // product
 router.get('/products/new', async function (req, res) {
-  const products = await ProductDAO.selectTopNew(3);
+  const products = await ProductDAO.selectTopNew(6);
   res.json(products);
 });
 router.get('/products/hot', async function (req, res) {
   const products = await ProductDAO.selectTopHot(3);
+  console.log("Hot Products:", products); // Thêm log để kiểm tra dữ liệu
   res.json(products);
-});
+});/////////////////////////
+
 // product
 router.get('/products/category/:cid', async function (req, res) {
   const _cid = req.params.cid;

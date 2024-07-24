@@ -37,6 +37,10 @@ const CustomerDAO = {
   async selectByID(_id) {
     const customer = await Models.Customer.findById(_id).exec();
     return customer;
+  },
+  async selectByCount() {
+    const count = await Models.Customer.countDocuments({});
+    return count;
   }
 };
 module.exports = CustomerDAO;

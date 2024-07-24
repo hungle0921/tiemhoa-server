@@ -1,0 +1,29 @@
+.new-products-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px; /* Khoảng cách giữa các hình */
+  padding: 0 20px; /* Đảm bảo có khoảng cách hai bên */
+}
+
+.new-products-container .inline {
+  flex: 1 1 300px; /* Đảm bảo mỗi hình có chiều rộng cố định và co giãn được */
+  box-sizing: border-box; /* Đảm bảo padding và border không làm vỡ layout */
+  max-width: 300px; /* Giới hạn chiều rộng tối đa */
+}
+
+.new-products-container figure {
+  margin: 0;
+  padding: 10px;
+  text-align: center;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.align-center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}

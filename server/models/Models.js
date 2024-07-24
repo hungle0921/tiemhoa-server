@@ -30,6 +30,8 @@ const ProductSchema = mongoose.Schema({
   price: Number,
   image: String,
   cdate: Number,
+  image: String,
+  imageDetails: [String],
   category: CategorySchema
 }, { versionKey: false });
 

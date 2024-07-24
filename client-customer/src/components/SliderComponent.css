@@ -1,0 +1,10 @@
+.slider-container {
+    width: 100vw;
+    margin-left: calc(-50vw + 50%);
+    overflow: hidden;
+}
+
+.slider-image {
+    width: 100vw;
+    height: auto;
+}
