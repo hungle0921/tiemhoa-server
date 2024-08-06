@@ -16,21 +16,20 @@ const Footer = () => {
             <h3>Menu</h3>
             <ul>
               <li><a href="/">Trang chủ</a></li>
-              <li><a href="/products/flowers">Bó Hoa Tươi</a></li>
-              <li><a href="/products/opening-flowers">Kệ Hoa Khai Trương</a></li>
-              <li><a href="/products/wedding-flowers">Hoa Cưới</a></li>
-              <li><a href="/products/soap-flowers">Hoa Sáp</a></li>
-              <li><a href="/contact">Liên Hệ</a></li>
+              <li><a href="/">Bó Hoa Tươi</a></li>
+              <li><a href="/">Hoa Cưới</a></li>
+              <li><a href="/">Hoa Sáp</a></li>
+              <li><a href="/">Liên Hệ</a></li>
             </ul>
           </div>
           <div className={styles.section}>
             <h3>Chính Sách</h3>
             <ul>
-              <li><a href="/payment-methods">Hình Thức Thanh Toán</a></li>
-              <li><a href="/shipping-policy">Chính sách giao hàng</a></li>
-              <li><a href="/privacy-policy">Chính sách bảo mật thông tin</a></li>
-              <li><a href="/warranty-policy">Chính sách bảo hành</a></li>
-              <li><a href="/terms-of-use">Điều khoản sử dụng</a></li>
+              <li><a href="/">Hình Thức Thanh Toán</a></li>
+              <li><a href="/">Chính sách giao hàng</a></li>
+              <li><a href="/">Chính sách bảo mật thông tin</a></li>
+              <li><a href="/">Chính sách bảo hành</a></li>
+              <li><a href="/">Điều khoản sử dụng</a></li>
             </ul>
           </div>
           <div className={styles.section}>
